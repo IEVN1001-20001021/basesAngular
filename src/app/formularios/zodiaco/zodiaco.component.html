@@ -1,0 +1,27 @@
+<div>
+    <h1>Datos Personales</h1>
+    <form [formGroup]="formulario">
+        <Label>Nombre</Label><input formControlName="nombre" type="text">
+        <label>Apellido Paterno</label><input formControlName="apellidoPaterno" type="text">
+        <label>Apellido Materno</label><input formControlName="apellidoMaterno" type="text">
+        <h2>Fecha de Nacimiento</h2>
+        <div>
+            <label>Dia</label><input formControlName="dia" type="number">
+            <label>Mes</label><input formControlName="mes" type="number">
+            <label>Año</label><input formControlName="year" type="number">
+        </div>
+        <h2>Sexo</h2>
+        <div>
+            <input formControlName="masculino" type="checkbox"> Masculino
+            <input formControlName="femenino" type="checkbox"> Femenino
+        </div>
+        <button (click)="calcularZodiacChino()">Imprimir</button>
+
+        <h3>{{name}}</h3>
+        <h3>{{edad}}</h3>
+        <h3>{{signoChino}}</h3>
+        <div style="text-align: center;">
+            <img [src]="signoIMG" [title]="signoChino" [style.width.px]="imageWidth">
+        </div>
+    </form>
+</div>
